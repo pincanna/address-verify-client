@@ -68,12 +68,12 @@ export function reducer(state, action) {
 
     case ADDRESS_VERIFICATION_SEND_VERIFICATION_SUCCESS:
       // The request is success
-      console.log(action.data)
+      const {data} = action.data;
       return {
         ...state,
         sendVerificationPending: false,
         sendVerificationError: null,
-        response: action.data.data
+        response: data
       };
 
     case ADDRESS_VERIFICATION_SEND_VERIFICATION_FAILURE:

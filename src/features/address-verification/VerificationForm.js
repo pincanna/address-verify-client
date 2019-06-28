@@ -47,6 +47,7 @@ export class VerificationForm extends Component {
             <Form.Button disabled={this.props.addressVerification.sendVerificationPending} positive>Submit</Form.Button>
           </Form>
         </Segment>
+        {this.props.sendVerificationPending && <h2>Please wait...</h2>}
         {!!this.props.addressVerification.response && <Message>
           <p><strong>Status:</strong> {this.props.addressVerification.response['status']}</p>
           <p><strong>Address:</strong> <br />
