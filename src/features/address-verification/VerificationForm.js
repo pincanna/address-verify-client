@@ -15,8 +15,7 @@ export class VerificationForm extends Component {
   handleSubmit = (e) => {
     const {code} = this.props.addressVerification
     e.preventDefault();
-    alert(code)
-    this.props.actions.sendVerification({verification_code: code})
+    this.props.actions.sendVerification({verification_code: code});
   }
 
   render() {
