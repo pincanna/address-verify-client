@@ -64,6 +64,7 @@ export function reducer(state, action) {
         ...state,
         sendVerificationPending: true,
         sendVerificationError: null,
+        response: null
       };
 
     case ADDRESS_VERIFICATION_SEND_VERIFICATION_SUCCESS:
@@ -73,7 +74,8 @@ export function reducer(state, action) {
         ...state,
         sendVerificationPending: false,
         sendVerificationError: null,
-        response: data
+        response: data,
+        code: ''
       };
 
     case ADDRESS_VERIFICATION_SEND_VERIFICATION_FAILURE:
