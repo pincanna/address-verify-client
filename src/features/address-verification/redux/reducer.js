@@ -8,9 +8,11 @@
 
 import initialState from './initialState';
 import { reducer as changeCodeReducer } from './changeCode';
+import { reducer as sendVerificationReducer } from './sendVerification';
 
 const reducers = [
   changeCodeReducer,
+  sendVerificationReducer,
 ];
 
 export default function reducer(state = initialState, action) {
