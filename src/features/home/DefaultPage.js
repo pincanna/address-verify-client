@@ -24,7 +24,7 @@ export class DefaultPage extends Component {
         <div className="app-intro">
           <h3>Received your verification letter?</h3>
           <Link to="/address-verification">
-            <Button>Get Started</Button>
+            <Button positive>Get Started</Button>
           </Link>
         </div>
       </div>
