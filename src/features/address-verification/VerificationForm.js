@@ -48,7 +48,7 @@ export class VerificationForm extends Component {
         </Segment>
         {this.props.addressVerification.sendVerificationPending && <h2>Please wait...</h2>}
         {!!this.props.addressVerification.response && <Message>
-          <p><strong>Status:</strong> {this.props.addressVerification.response['status']}</p>
+          <p><strong>Status:</strong> {this.props.addressVerification.response['status'].split('_').join(' ')}</p>
           <p><strong>Address:</strong> <br />
           {this.props.addressVerification.response['address']['address_line1']} <br />
           {this.props.addressVerification.response['address']['address_line2'] ? this.props.addressVerification.response['address']['address_line2'] + '</br>' : null}
