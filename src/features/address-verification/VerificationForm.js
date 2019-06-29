@@ -31,9 +31,9 @@ export class VerificationForm extends Component {
             on the letter you received in the mail:{' '}
           </p>{' '}
         </Message>{' '}
-        <Segment attached>
+        {!this.props.addressVerification.response && <Segment attached>
           {this.props.addressVerification.sendVerificationError && <Message error>There was an error. Please try again.</Message>}
-          <Form onSubmit={this.handleSubmit}>
+           <Form onSubmit={this.handleSubmit}>
             <div className="field">
               <label htmlFor="code"> Verification Code </label>{' '}
               <MaskedInput
@@ -86,7 +86,7 @@ export class VerificationForm extends Component {
               Submit{' '}
             </Form.Button>{' '}
           </Form>{' '}
-        </Segment>{' '}
+        </Segment>}
         {this.props.addressVerification.sendVerificationPending && <h2> Please wait... </h2>}{' '}
         
         {!!this.props.addressVerification.response && !this.props.addressVerification.sendVerificationPending && (
@@ -95,6 +95,10 @@ export class VerificationForm extends Component {
               {' '}
               <strong> Status: </strong><br/>
               <Label color={"blue"}>{this.props.addressVerification.response['status'].split('_').join(' ')}</Label>
+            </p>
+            <p>
+            <strong>Verification Code:</strong> <br/>
+              {this.props.addressVerification.response['verification_code']}
             </p>
             <p>
               {' '}
